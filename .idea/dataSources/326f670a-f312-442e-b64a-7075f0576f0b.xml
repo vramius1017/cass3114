@@ -34,85 +34,115 @@
       <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
       <SpeculativeRetry>99p</SpeculativeRetry>
     </table>
-    <table id="10" parent="2" name="deseases">
+    <table id="10" parent="2" name="covid19">
       <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
       <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
       <Compression>{&apos;chunk_length_in_kb&apos;: &apos;16&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
       <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
       <SpeculativeRetry>99p</SpeculativeRetry>
     </table>
-    <table id="11" parent="2" name="scat_by_cat">
+    <table id="11" parent="2" name="deseases">
       <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
       <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
       <Compression>{&apos;chunk_length_in_kb&apos;: &apos;16&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
       <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
       <SpeculativeRetry>99p</SpeculativeRetry>
     </table>
-    <key id="12" parent="9" name="primary key">
+    <table id="12" parent="2" name="scat_by_cat">
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;16&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
+      <SpeculativeRetry>99p</SpeculativeRetry>
+    </table>
+    <key id="13" parent="9" name="primary key">
       <Columns>name
-code|ASC
 </Columns>
     </key>
-    <column id="13" parent="9" name="name">
+    <column id="14" parent="9" name="name">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="14" parent="9" name="code">
+    <column id="15" parent="9" name="code">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="15" parent="9" name="id">
+    <column id="16" parent="9" name="id">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="16" parent="9" name="nb">
+    <column id="17" parent="9" name="nb">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <key id="17" parent="10" name="primary key">
-      <Columns>name
-id|ASC
+    <key id="18" parent="10" name="primary key">
+      <Columns>desease
+name|ASC
 </Columns>
     </key>
-    <column id="18" parent="10" name="name">
+    <column id="19" parent="10" name="desease">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="19" parent="10" name="id">
+    <column id="20" parent="10" name="name">
       <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="21" parent="10" name="class">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="22" parent="10" name="id">
+      <Position>4</Position>
       <DataType>uuid|0s</DataType>
     </column>
-    <column id="20" parent="10" name="class">
-      <Position>3</Position>
+    <column id="23" parent="10" name="labels">
+      <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="21" parent="10" name="description">
-      <Position>4</Position>
-      <DataType>text|0s</DataType>
-    </column>
-    <key id="22" parent="11" name="primary key">
-      <Columns>scatname
-catname
-scatcode|DESC
+    <key id="24" parent="11" name="primary key">
+      <Columns>name
 </Columns>
     </key>
-    <column id="23" parent="11" name="scatname">
+    <column id="25" parent="11" name="name">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="24" parent="11" name="catname">
+    <column id="26" parent="11" name="class">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="25" parent="11" name="scatcode">
+    <column id="27" parent="11" name="description">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="28" parent="11" name="id">
+      <Position>4</Position>
+      <DataType>uuid|0s</DataType>
+    </column>
+    <key id="29" parent="12" name="primary key">
+      <Columns>catname
+scatname|DESC
+scatcode|ASC
+</Columns>
+    </key>
+    <column id="30" parent="12" name="catname">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="31" parent="12" name="scatname">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="32" parent="12" name="scatcode">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="26" parent="11" name="catcode">
+    <column id="33" parent="12" name="catcode">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="27" parent="11" name="id">
+    <column id="34" parent="12" name="id">
       <Position>5</Position>
       <DataType>int|0s</DataType>
     </column>

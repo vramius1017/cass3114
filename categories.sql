@@ -84,8 +84,18 @@ insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (2,5,'Myco
 // truncate table scat_by_cat;
 
 create table neoplasms ();
+create table covid19(
+    id uuid,
+    desease text,
+    name text,
+    class varchar,
+    labels text,
+    primary key((desease), name)
+) with clustering order by (name DESC);
 
-create table covid19 ();
+
+
+
 
 create table elders_pats ();
 
@@ -97,12 +107,15 @@ create table deseases
     name        text,
     class       text,
     description text,
-    primary key (name, id)
+    primary key (name)
 );
 
 select * from deseases;
+
+// test query app
 select name from deseases ;
-truncate table deseases ;
+
+//truncate table deseases ;
 insert into deseases (id,name,class,description) values (uuid(),'Neoplasms','Mesh Ontology based http://purl.bioontology.org/ontology/MESH/D009369 ','degenerative cells desease');
 insert into deseases (id,name,class,description) values (uuid(),'Covid19','Mesh Ontology based http://purl.bioontology.org/ontology/MESH/D000086402','SARS-COV-2 corona virus infection');
 insert into deseases (id,name,class,description) values (uuid(),'Elder pats','Plateforme CEPS Ontology ','elders people affections and deseases');
