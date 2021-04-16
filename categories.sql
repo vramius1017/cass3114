@@ -83,6 +83,23 @@ create table neoplasms ();
 
 create table covid19 ();
 
-create table elders_paths ();
+create table elders_pats ();
 
 create table diabetes ();
+
+create table deseases
+(
+    id          uuid,
+    name        text,
+    class       text,
+    description text,
+    primary key (name, id)
+);
+
+select * from deseases;
+select name from deseases ;
+truncate table deseases ;
+insert into deseases (id,name,class,description) values (uuid(),'Neoplasms','Mesh Ontology based http://purl.bioontology.org/ontology/MESH/D009369 ','degenerative cells desease');
+insert into deseases (id,name,class,description) values (uuid(),'Covid19','Mesh Ontology based http://purl.bioontology.org/ontology/MESH/D000086402','SARS-COV-2 corona virus infection');
+insert into deseases (id,name,class,description) values (uuid(),'Elder pats','Plateforme CEPS Ontology ','elders people affections and deseases');
+insert into deseases (id,name,class,description) values (uuid(),'Diabetes','Mesh Ontology based http://purl.bioontology.org/ontology/MESH/D003920 ','diabetes mellitus glucose metabolism desorders');
