@@ -83,7 +83,14 @@ insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (2,5,'Myco
 
 // truncate table scat_by_cat;
 
-create table neoplasms ();
+create table neoplasms (id uuid,
+    desease text,
+    name text,
+    class varchar,
+    labels text,
+    primary key((desease), name)
+) with clustering order by (name DESC);
+
 create table covid19(
     id uuid,
     desease text,
@@ -97,9 +104,21 @@ create table covid19(
 
 
 
-create table elders_pats ();
+create table elders_pats (id uuid,
+    desease text,
+    name text,
+    class varchar,
+    labels text,
+    primary key((desease), name)
+) with clustering order by (name DESC);
 
-create table diabetes ();
+create table diabetes (id uuid,
+    desease text,
+    name text,
+    class varchar,
+    labels text,
+    primary key((desease), name)
+) with clustering order by (name DESC);
 
 create table deseases
 (
