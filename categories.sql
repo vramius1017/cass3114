@@ -1,8 +1,11 @@
+// keyspace cassandra pour la selection de la categorie et de la sous categorie d'INM
+// crationdu keyspace inca  replication 3 en single node version cassandra  3.11.10  conteneur dockeur cass3114
 create keyspace inca with replication = {
     'class' : 'SimpleStrategy',
     'replication_factor' : 3
     } and durable_writes = true;
 
+//table des categories d'INM
 create table categories
 (
     name text,
@@ -13,7 +16,7 @@ create table categories
 )
     with comment = 'categories INM  ontologie Plateforme CEPS';
 
-
+// requestes d'insertion des categories d'INM
 use inca;
 
 insert into categories (id,name,code,nb) values (1,'Psychological Health Interventions',1,5);
@@ -23,13 +26,14 @@ insert into categories (id,name,code,nb) values (4,'Digital Health Interventions
 insert into categories (id,name,code,nb) values (5,'Others Health Interventions',5,5);
 
 
-
-
-
 select * from categories ;
 
 //delete from categories where code = 3 and name = 'Psychological Health Interventions';
 
+
+
+
+// creation de la table des sous categories d'INM
 create table scat_by_cat
 (
     id       int,
@@ -45,6 +49,8 @@ create table scat_by_cat
 
 select * from scat_by_cat;
 
+
+// requêtes d'insertion des sous-categoriesd'INM
 insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (1,5,'Thermalism programs',2,'Physical Health Interventions');
 insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (4,1,'Physical activity programs',2,'Physical Health Interventions');
 insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (6,3,'Physiotherapies',2,'Physical Health Interventions');
