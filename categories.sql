@@ -139,3 +139,39 @@ insert into deseases (id,name,class,description) values (uuid(),'Neoplasms','Mes
 insert into deseases (id,name,class,description) values (uuid(),'Covid19','Mesh Ontology based http://purl.bioontology.org/ontology/MESH/D000086402','SARS-COV-2 corona virus infection');
 insert into deseases (id,name,class,description) values (uuid(),'Elder pats','Plateforme CEPS Ontology ','elders people affections and deseases');
 insert into deseases (id,name,class,description) values (uuid(),'Diabetes','Mesh Ontology based http://purl.bioontology.org/ontology/MESH/D003920 ','diabetes mellitus glucose metabolism desorders');
+
+
+create table DBType (
+id int,
+name text,
+primary key (name)
+);
+
+insert into DBType(id,name) values (1,'Cochrane');
+insert into DBType(id,name) values (2,'Springer');
+insert into DBType(id,name) values (3,'Elsevier');
+// insert into DBType(id,name) values (4,'Core.uk');  fonctionnalité  à faire niveau selection proposition validation
+// test query app
+select name from DBType;
+
+create table trial_design (
+    id int,
+    design text,
+    primary key (design)
+);
+
+insert into trial_design (id,design) values (1,'randomized controlled trial');
+insert into trial_design (id,design) values (1,'clinical trial');
+insert into trial_design (id,design) values (1,'controlled trial ');
+
+// test query app
+
+select design from trial_design;
+
+
+create table study_type (
+    id int,
+    db text,
+    study text,
+    primary key ((db), study)
+);
