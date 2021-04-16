@@ -12,7 +12,7 @@ create table categories
     code int,
     id   int,
     nb   int,
-    primary key (name, code)
+    primary key (name)
 )
     with comment = 'categories INM  ontologie Plateforme CEPS';
 
@@ -27,6 +27,8 @@ insert into categories (id,name,code,nb) values (5,'Others Health Interventions'
 
 
 select * from categories ;
+//test query app
+select name from categories;
 
 //delete from categories where code = 3 and name = 'Psychological Health Interventions';
 
@@ -41,13 +43,15 @@ create table scat_by_cat
     scatname text,
     catcode  int,
     catname  text,
-    primary key ((scatname, catname), scatcode)
-) with clustering order by (scatcode desc);
+    primary key ((catname), scatname,scatcode)
+) with clustering order by (scatname DESC,scatcode ASC);
 
 //COPY inca.scat_by_cat(id,scatcode,scatname,catcode,catname) FROM 'C:/cassandra/scat_cat_v10.csv' WITH delimiter = ';' AND HEADER =
 // TRUE ;
 
 select * from scat_by_cat;
+// test query app
+select scatname from scat_by_cat where catname = 'Digital Health Interventions';
 
 
 // requêtes d'insertion des sous-categoriesd'INM
