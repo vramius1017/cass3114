@@ -78,3 +78,11 @@ insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (10,3,'Bot
 insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (2,5,'Mycological preparations',5,'Others Health Interventions');
 
 // truncate table scat_by_cat;
+
+create table neoplasms ();
+
+create table covid19 ();
+
+create table elders_paths ();
+
+create table diabetes ();
