@@ -169,9 +169,15 @@ insert into trial_design (id,design) values (1,'controlled trial ');
 select design from trial_design;
 
 
-create table study_type (
+create table study_by_db (
     id int,
     db text,
+    term  text,
     study text,
     primary key ((db), study)
 );
+
+insert into table study_by_db (id,db,term,study) values (1,'Cochrane','CDSR','meta-analysis')
+insert into table study_by_db (id,db,term,study) values (2,'Springer','Springer and meta-analysis','meta-analysis');
+insert into table study_by_db (id,db,term,study) values (3,'Springer','Springer and trial','trials');
+insert into table study_by_db (id,db,term,study) values (4,'Elsevier','Elsevier meta-analysis','meta-analysis');
