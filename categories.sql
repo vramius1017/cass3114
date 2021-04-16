@@ -65,4 +65,10 @@ insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (3,2,'Vide
 insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (9,1,'health wearable and handled devices',4,'Digital Health Interventions');
 insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (19,3,'Virtual reality therapies',4,'Digital Health Interventions');
 
+insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (2,5,'Cosmeceuticals',5,'Others Health Interventions');
+insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (5,4,'Electromagnetic methods',5,'Others Health Interventions');
+insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (8,1,'Mineral preparations',5,'Others Health Interventions');
+insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (10,3,'Botanical preparations',5,'Others Health Interventions');
+insert into scat_by_cat (id,scatcode,scatname,catcode,catname) values (2,5,'Mycological preparations',5,'Others Health Interventions');
+
 // truncate table scat_by_cat;
