@@ -1,5 +1,5 @@
 // keyspace cassandra pour la selection de la categorie et de la sous categorie d'INM
-// crationdu keyspace inca  replication 3 en single node version cassandra  3.11.10  conteneur dockeur cass3114
+// creation du keyspace inca  replication 3 en single node version cassandra  3.11.10  conteneur dockeur cass3114
 create keyspace inca with replication = {
     'class' : 'SimpleStrategy',
     'replication_factor' : 3
