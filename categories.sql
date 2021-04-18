@@ -141,18 +141,18 @@ insert into deseases (id,name,class,description) values (uuid(),'Elder pats','Pl
 insert into deseases (id,name,class,description) values (uuid(),'Diabetes','Mesh Ontology based http://purl.bioontology.org/ontology/MESH/D003920 ','diabetes mellitus glucose metabolism desorders');
 
 
-create table DBType (
+create table DB (
 id int,
 name text,
 primary key (name)
 );
 
-insert into DBType(id,name) values (1,'Cochrane');
-insert into DBType(id,name) values (2,'Springer');
-insert into DBType(id,name) values (3,'Elsevier');
+insert into DB(id,name) values (1,'Cochrane');
+insert into DB(id,name) values (2,'Springer');
+insert into DB(id,name) values (3,'Elsevier');
 // insert into DBType(id,name) values (4,'Core.uk');  fonctionnalité  à faire niveau selection proposition validation
 // test query app
-select name from DBType;
+select name from DB;
 
 create table trial_design (
     id int,
@@ -162,7 +162,7 @@ create table trial_design (
 
 insert into trial_design (id,design) values (1,'randomized controlled trial');
 insert into trial_design (id,design) values (1,'clinical trial');
-insert into trial_design (id,design) values (1,'controlled trial ');
+insert into trial_design (id,design) values (1,'controlled trial');
 
 // test query app
 
@@ -177,7 +177,16 @@ create table study_by_db (
     primary key ((db), study)
 );
 
-insert into table study_by_db (id,db,term,study) values (1,'Cochrane','CDSR','meta-analysis')
-insert into table study_by_db (id,db,term,study) values (2,'Springer','Springer and meta-analysis','meta-analysis');
-insert into table study_by_db (id,db,term,study) values (3,'Springer','Springer and trial','trials');
-insert into table study_by_db (id,db,term,study) values (4,'Elsevier','Elsevier meta-analysis','meta-analysis');
+insert into study_by_db (id,db,term,study) values (1,'Cochrane','CDSR','meta-analysis');
+insert into study_by_db (id,db,term,study) values (2,'Springer','Springer and meta-analysis','meta-analysis');
+insert into study_by_db (id,db,term,study) values (3,'Springer','Springer and trial','trials');
+insert into study_by_db (id,db,term,study) values (4,'Elsevier','Elsevier and meta-analysis','meta-analysis');
+
+
+select term from study_by_db where db ='Cochrane';
+select term from study_by_db where db ='Springer';
+select term from study_by_db where db ='Elsevier';
+
+select study from study_by_db where db ='Cochrane';
+select study from study_by_db where db ='Springer';
+select study from study_by_db where db ='Elsevier';
