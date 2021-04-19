@@ -190,3 +190,10 @@ select term from study_by_db where db ='Elsevier';
 select study from study_by_db where db ='Cochrane';
 select study from study_by_db where db ='Springer';
 select study from study_by_db where db ='Elsevier';
+
+create table queries (
+    id uuid,
+    query text,
+    qate date,
+    primary key((query), qate)
+)with clustering order by (qate DESC);

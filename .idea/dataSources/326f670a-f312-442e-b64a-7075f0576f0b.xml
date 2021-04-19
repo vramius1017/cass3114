@@ -41,7 +41,7 @@
       <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
       <SpeculativeRetry>99p</SpeculativeRetry>
     </table>
-    <table id="11" parent="2" name="dbtype">
+    <table id="11" parent="2" name="db">
       <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
       <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
       <Compression>{&apos;chunk_length_in_kb&apos;: &apos;16&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
@@ -76,207 +76,259 @@
       <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
       <SpeculativeRetry>99p</SpeculativeRetry>
     </table>
-    <table id="16" parent="2" name="scat_by_cat">
+    <table id="16" parent="2" name="queries">
       <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
       <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
       <Compression>{&apos;chunk_length_in_kb&apos;: &apos;16&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
       <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
       <SpeculativeRetry>99p</SpeculativeRetry>
     </table>
-    <table id="17" parent="2" name="trial_design">
+    <table id="17" parent="2" name="scat_by_cat">
       <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
       <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
       <Compression>{&apos;chunk_length_in_kb&apos;: &apos;16&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
       <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
       <SpeculativeRetry>99p</SpeculativeRetry>
     </table>
-    <key id="18" parent="9" name="primary key">
+    <table id="18" parent="2" name="study_by_db">
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;16&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
+      <SpeculativeRetry>99p</SpeculativeRetry>
+    </table>
+    <table id="19" parent="2" name="trial_design">
+      <Caching>{&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;NONE&apos;}</Caching>
+      <Compaction>{&apos;class&apos;: &apos;org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;}</Compaction>
+      <Compression>{&apos;chunk_length_in_kb&apos;: &apos;16&apos;, &apos;class&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;}</Compression>
+      <DclocalReadRepairChance>0.0</DclocalReadRepairChance>
+      <SpeculativeRetry>99p</SpeculativeRetry>
+    </table>
+    <key id="20" parent="9" name="primary key">
       <Columns>name
 </Columns>
     </key>
-    <column id="19" parent="9" name="name">
+    <column id="21" parent="9" name="name">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="20" parent="9" name="code">
+    <column id="22" parent="9" name="code">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="21" parent="9" name="id">
+    <column id="23" parent="9" name="id">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="22" parent="9" name="nb">
+    <column id="24" parent="9" name="nb">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <key id="23" parent="10" name="primary key">
+    <key id="25" parent="10" name="primary key">
       <Columns>desease
 name|ASC
 </Columns>
     </key>
-    <column id="24" parent="10" name="desease">
+    <column id="26" parent="10" name="desease">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="25" parent="10" name="name">
+    <column id="27" parent="10" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="26" parent="10" name="class">
+    <column id="28" parent="10" name="class">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="27" parent="10" name="id">
+    <column id="29" parent="10" name="id">
       <Position>4</Position>
       <DataType>uuid|0s</DataType>
     </column>
-    <column id="28" parent="10" name="labels">
+    <column id="30" parent="10" name="labels">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <key id="29" parent="11" name="primary key">
+    <key id="31" parent="11" name="primary key">
       <Columns>name
 </Columns>
     </key>
-    <column id="30" parent="11" name="name">
+    <column id="32" parent="11" name="name">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="31" parent="11" name="id">
+    <column id="33" parent="11" name="id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </column>
-    <key id="32" parent="12" name="primary key">
+    <key id="34" parent="12" name="primary key">
       <Columns>name
 </Columns>
     </key>
-    <column id="33" parent="12" name="name">
+    <column id="35" parent="12" name="name">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="34" parent="12" name="class">
+    <column id="36" parent="12" name="class">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="35" parent="12" name="description">
+    <column id="37" parent="12" name="description">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="36" parent="12" name="id">
+    <column id="38" parent="12" name="id">
       <Position>4</Position>
       <DataType>uuid|0s</DataType>
     </column>
-    <key id="37" parent="13" name="primary key">
+    <key id="39" parent="13" name="primary key">
       <Columns>desease
 name|DESC
 </Columns>
     </key>
-    <column id="38" parent="13" name="desease">
+    <column id="40" parent="13" name="desease">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="39" parent="13" name="name">
+    <column id="41" parent="13" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="40" parent="13" name="class">
+    <column id="42" parent="13" name="class">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="41" parent="13" name="id">
+    <column id="43" parent="13" name="id">
       <Position>4</Position>
       <DataType>uuid|0s</DataType>
     </column>
-    <column id="42" parent="13" name="labels">
+    <column id="44" parent="13" name="labels">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <key id="43" parent="14" name="primary key">
+    <key id="45" parent="14" name="primary key">
       <Columns>desease
 name|DESC
 </Columns>
     </key>
-    <column id="44" parent="14" name="desease">
+    <column id="46" parent="14" name="desease">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="45" parent="14" name="name">
+    <column id="47" parent="14" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="46" parent="14" name="class">
+    <column id="48" parent="14" name="class">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="47" parent="14" name="id">
+    <column id="49" parent="14" name="id">
       <Position>4</Position>
       <DataType>uuid|0s</DataType>
     </column>
-    <column id="48" parent="14" name="labels">
+    <column id="50" parent="14" name="labels">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <key id="49" parent="15" name="primary key">
+    <key id="51" parent="15" name="primary key">
       <Columns>desease
 name|DESC
 </Columns>
     </key>
-    <column id="50" parent="15" name="desease">
+    <column id="52" parent="15" name="desease">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="51" parent="15" name="name">
+    <column id="53" parent="15" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="52" parent="15" name="class">
+    <column id="54" parent="15" name="class">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="53" parent="15" name="id">
+    <column id="55" parent="15" name="id">
       <Position>4</Position>
       <DataType>uuid|0s</DataType>
     </column>
-    <column id="54" parent="15" name="labels">
+    <column id="56" parent="15" name="labels">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <key id="55" parent="16" name="primary key">
+    <key id="57" parent="16" name="primary key">
+      <Columns>query
+qate|DESC
+</Columns>
+    </key>
+    <column id="58" parent="16" name="query">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="59" parent="16" name="qate">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <column id="60" parent="16" name="id">
+      <Position>3</Position>
+      <DataType>uuid|0s</DataType>
+    </column>
+    <key id="61" parent="17" name="primary key">
       <Columns>catname
 scatname|DESC
 scatcode|ASC
 </Columns>
     </key>
-    <column id="56" parent="16" name="catname">
+    <column id="62" parent="17" name="catname">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="57" parent="16" name="scatname">
+    <column id="63" parent="17" name="scatname">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="58" parent="16" name="scatcode">
+    <column id="64" parent="17" name="scatcode">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="59" parent="16" name="catcode">
+    <column id="65" parent="17" name="catcode">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="60" parent="16" name="id">
+    <column id="66" parent="17" name="id">
       <Position>5</Position>
       <DataType>int|0s</DataType>
     </column>
-    <key id="61" parent="17" name="primary key">
-      <Columns>design
+    <key id="67" parent="18" name="primary key">
+      <Columns>db
+study|ASC
 </Columns>
     </key>
-    <column id="62" parent="17" name="design">
+    <column id="68" parent="18" name="db">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="63" parent="17" name="id">
+    <column id="69" parent="18" name="study">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="70" parent="18" name="id">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="71" parent="18" name="term">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <key id="72" parent="19" name="primary key">
+      <Columns>design
+</Columns>
+    </key>
+    <column id="73" parent="19" name="design">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="74" parent="19" name="id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </column>
